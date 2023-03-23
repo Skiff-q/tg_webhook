@@ -19,6 +19,10 @@ async def echo(message: types.Message):
 async def echo(message: types.Message):
    await message.reply('Вы обратились к справке бота')
 
+@dp.message_handler(text='Привет')
+async def echo(message: types.Message):
+   await message.answer('Приветствую тебя человек')
+
 
 if __name__ == '__main__':
    executor.start_polling(dp, skip_updates=True)
